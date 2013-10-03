@@ -14,6 +14,13 @@ module.exports = (grunt) ->
         clean:
             build: ['build/*']
 
+        compass:
+            dev:
+                options:
+                    specify: ['src/index.scss']
+                    sassDir: 'src/'
+                    cssDir: 'build/'
+
         copy:
             dev: {
                 files: [{
@@ -24,14 +31,15 @@ module.exports = (grunt) ->
                 }]
             }
 
+
     }
 
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-contrib-copy'
+    grunt.loadNpmTasks 'grunt-contrib-compass'
 
-    grunt.registerTask 'build:dev', 'build dev files', ['clean:build', 'coffee:dev', 'copy:dev']
-
+    grunt.registerTask 'build:dev', 'build dev files', ['clean:build', 'coffee:dev', 'compass:dev', 'copy:dev']
 
 
     return
