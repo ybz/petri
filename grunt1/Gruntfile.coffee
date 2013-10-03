@@ -19,9 +19,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-clean'
 
-    grunt.registerTask 'some-task', 'a test task', ->
-        grunt.log.write('test task running ').ok()
-        return
+    grunt.registerTask 'build:dev', 'build dev files', ['clean:build', 'coffee:dev', 'copy:dev']
 
 
 
