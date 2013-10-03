@@ -3,10 +3,13 @@ module.exports = (grunt) ->
     grunt.initConfig {
         pkg: grunt.file.readJSON('package.json')
         coffee:
-            all:
+            dev:
                 files: [{
-                    src: 'src/*.coffee'
-                    dest: 'build/test.js'
+                    expand: true
+                    cwd: 'src/'
+                    src: '**/*.coffee'
+                    dest: 'build/'
+                    ext: '.js'
                 }]
 
     }
