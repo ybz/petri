@@ -1,4 +1,4 @@
-require ['sub1'], (sub1) ->
-    console.log "main here yo"
+require ['sub1', 'jquery'], (sub1, $) ->
+    console.log "main here yo 2"
     sub1.greet()
     return {}
