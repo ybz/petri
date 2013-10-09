@@ -1,4 +1,18 @@
-require ['sub1', 'jquery'], (sub1, $) ->
+require [
+    'jquery'
+    'codemirror'
+], (
+    $
+    CodeMirror
+) ->
     console.log "main here yo 2"
-    sub1.greet()
+    initEditor = ->
+        host_el = $('.editor_panel')
+        editor = CodeMirror host_el[0],
+            value: 'Start typing'
+            lineNumbers: true
+        window.editor = editor
+
+    $ ->
+        initEditor()
     return {}

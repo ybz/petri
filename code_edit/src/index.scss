@@ -19,3 +19,22 @@ body {
         font-family: monospace;
     }
 }
+
+main {
+    white-space: nowrap;
+    .editor_panel, .result_panel {
+        white-space: normal;
+        display: inline-block;
+        width: 500px;
+        height: 500px;
+        border-color: #999;
+        border-width: 1px;
+        border-style: solid;
+        vertical-align: top;
+    }
+    .editor_panel {
+    }
+    .result_panel {
+        margin-left: 10px;
+    }
+}
