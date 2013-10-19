@@ -7,4 +7,5 @@ require [
 ) ->
     $ ->
         app = new App()
+        window.app = app
     return

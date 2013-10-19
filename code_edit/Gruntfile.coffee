@@ -31,6 +31,11 @@ module.exports = (grunt) ->
                 }]
             }
 
+        watch:
+            coffee:
+                files: 'src/**/*.coffee'
+                tasks: ['coffee:dev']
+
 
     }
 
@@ -38,6 +43,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-compass'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
 
     grunt.registerTask 'build:dev', 'build dev files', ['clean:build', 'coffee:dev', 'compass:dev', 'copy:dev']
 
