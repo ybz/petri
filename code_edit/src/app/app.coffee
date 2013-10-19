@@ -9,7 +9,7 @@ define [
 ) ->
     class App
         constructor: (options={}) ->
-            console.log 'app init 12'
+            console.log 'app init 13'
             @initEditor()
             @initTitle()
 

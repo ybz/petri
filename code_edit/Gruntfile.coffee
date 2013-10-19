@@ -26,7 +26,7 @@ module.exports = (grunt) ->
                 files: [{
                     expand: true
                     cwd: 'src/'
-                    src: ['**/*.css', '**/*.js', '**/*.html']
+                    src: ['**/*.css', '**/*.js', '**/*.html', '**/*.hbs']
                     dest: 'build/'
                 }]
             }
@@ -36,6 +36,12 @@ module.exports = (grunt) ->
                 files: 'src/**/*.coffee'
                 tasks: ['coffee:dev']
 
+        connect:
+            server:
+                options:
+                    base: 'build'
+                    keepalive: true
+
 
     }
 
@@ -44,6 +50,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-compass'
     grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.loadNpmTasks 'grunt-contrib-connect'
 
     grunt.registerTask 'build:dev', 'build dev files', ['clean:build', 'coffee:dev', 'compass:dev', 'copy:dev']
 
