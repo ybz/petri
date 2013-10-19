@@ -12,4 +12,5 @@ require.config
         lodash:
             exports: '_'
 
-
+    # used for DEV remove on build
+    urlArgs: "bust=" + (new Date()).getTime()
